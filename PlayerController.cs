@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
 
     void PlayerMove()
     {
-        float horizontalInput = Input.GetAxis("Horizontal");
+        float horizontalInput = Input.GetAxis("Horizontal"); //zeby  sie tylko wychylal
         float verticalInput = Input.GetAxis("Vertical");
 
         playerRb.AddForce(Vector3.forward * moveSpeed * verticalInput);
