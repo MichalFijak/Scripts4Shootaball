@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody playerRb;
     public float moveSpeed = 1.0f; // to change later
+    public float moveRotate = 150.0f; // to change later
     
     // Start is called before the first frame update
     void Start()
@@ -22,12 +23,13 @@ public class PlayerController : MonoBehaviour
 
     void PlayerMove()
     {
-        float horizontalInput = Input.GetAxis("Horizontal"); //zeby  sie tylko wychylal
-        float verticalInput = Input.GetAxis("Vertical");
+        float rotationalInput = Input.GetAxis("Rotational");
 
-        playerRb.AddForce(Vector3.forward * moveSpeed * verticalInput);
-        playerRb.AddForce(Vector3.right * moveSpeed * horizontalInput);
-
+ 
+        transform.Rotate(Vector3.up * moveRotate * rotationalInput*Time.deltaTime);
+ 
+        
     }
+
 
 }
